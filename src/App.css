@@ -1,0 +1,407 @@
+/* ── Global reset & base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+  color: #000000;
+}
+
+/* ── Page wrapper ── */
+.store-page {
+  max-width: 616px;
+  margin: 0 auto;
+  background: #ffffff;
+  min-height: 100vh;
+  padding-bottom: 24px;
+}
+
+/* ── Section title shared ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  padding-bottom: 0;
+}
+
+.section-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+}
+
+.badge-best-seller {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 4px;
+  padding: 2px 6px;
+  line-height: 16px;
+}
+
+/* ── Category Tabs ── */
+.tab-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 19px 12px 0;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.tab:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.tab--active {
+  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.tab__icon-frame {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab__icon {
+  font-size: 30px;
+  line-height: 48px;
+  text-align: center;
+}
+
+.tab__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #000000;
+  text-align: center;
+}
+
+/* ── Featured Products ── */
+.featured-section {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.products-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.product-card {
+  flex: 1;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.product-card__image-wrap {
+  width: 100%;
+  height: 164px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-card__content {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-card__name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #000000;
+}
+
+.product-card__price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+}
+
+/* ── Banner Slider ── */
+.banner-slider {
+  padding: 8px 12px 0;
+}
+
+.banner-slider__image-wrap {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 241px;
+}
+
+.banner-slider__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-slider__pagination {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.banner-slider__dot {
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: background 0.15s ease, width 0.15s ease;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  width: 4px;
+  padding: 0;
+}
+
+.banner-slider__dot--active {
+  background: #ffffff;
+  width: 20px;
+}
+
+/* ── Customer Reviews ── */
+.reviews-section {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-card {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-card__user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.review-card__avatar-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.review-card__avatar {
+  width: 34px;
+  height: 32px;
+  border-radius: 24px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-card__name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #000000;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.star-rating__star {
+  color: #FFC700;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.review-card__comment {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000000;
+}
+
+/* ── Browse By Brand ── */
+.brands-section {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brands-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brands-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.brand-chip {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+  min-height: 56px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.brand-chip:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.brand-chip__icon-frame {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-chip__icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.brand-chip__name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #000000;
+  text-align: left;
+}
+
+/* ── Action Buttons ── */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 12px 0;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.btn:active {
+  opacity: 0.8;
+}
+
+.btn--secondary {
+  background: #ffffff;
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+.btn--secondary:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.btn--primary {
+  background: #000000;
+  border: 1px solid #000000;
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: #333333;
+}
